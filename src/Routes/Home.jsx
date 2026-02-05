@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router";
 import mainImage from "./image/main.png"
+
 function Home() {
     const imgRef = useRef(null);
 

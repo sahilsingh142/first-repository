@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import axios from 'axios';
-import ShowTem from '../ShowTem';
 
 function Login() {
     const [loginFrom,setLoginFrom] = useState({
@@ -14,7 +13,7 @@ function Login() {
 
     const submitLoginData = async () => {
         try{
-            const fetchData = await axios.post("http://localhost:3500/login",loginFrom)
+            const fetchData = await axios.post(process.env.LOGIN_API,loginFrom)
              alert(fetchData.data.message || "Signup Successful");
              setCheckLogin(true);
         }catch(err){
