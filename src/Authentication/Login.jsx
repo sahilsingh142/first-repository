@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios';
 
+
 function Login() {
     const [loginFrom,setLoginFrom] = useState({
         email:"",
@@ -13,9 +14,8 @@ function Login() {
 
     const submitLoginData = async () => {
         try{
-            const fetchData = await axios.post(process.env.LOGIN_API,loginFrom)
+            const fetchData = await axios.post( "http://localhost:3500/login",loginFrom)
              alert(fetchData.data.message || "Signup Successful");
-             setCheckLogin(true);
         }catch(err){
              alert(err.response?.data?.message || "Signup Failed");
         }
